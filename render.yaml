@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: itmotion-site
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn itmotion_site.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: itmotion_site.settings
