@@ -1,0 +1,79 @@
+<!-- templates/main/home.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT-in-motion | Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/styles.css' %}?v=2.0">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>IT-in-Motion</h1>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h2 class="fade-in">Securing Tomorrow, Today</h2>
+            <p class="fade-in delay-1">We specialize in CCTV installations, fire alarms, and maintenance services.</p>
+            <a href="#services" class="btn fade-in delay-2">Explore Services</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="slide-up">Our Services</h2>
+        <div class="services-container">
+            <div class="service-card fade-in-up">
+                <img src="{% static 'main/cctv.png' %}" alt="CCTV">
+                <h3>CCTV Installation</h3>
+                <p>Professional setup for homes, offices, and public spaces using HD surveillance systems.</p>
+            </div>
+            <div class="service-card fade-in-up delay-1">
+                <img src="{% static 'main/fire-alarm.png' %}" alt="Fire Alarm">
+                <h3>Fire Alarm Systems</h3>
+                <p>Early warning systems to protect life and property from fire hazards.</p>
+            </div>
+            <div class="service-card fade-in-up delay-2">
+                <img src="{% static 'main/maintenance.png' %}" alt="Maintenance">
+                <h3>Maintenance Services</h3>
+                <p>Routine checks and repairs to ensure your devices work perfectly at all times.</p>
+            </div>
+        </div>
+    </section>
+      
+
+    <section class="about" id="about">
+        <h2>About Us</h2>
+        <p>At IT-in-motion, we are passionate about keeping you safe. With years of experience and a commitment to excellence, our team delivers high-quality security installations and maintenance services you can trust.</p>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <form class="contact-form" method="post">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 IT-in-motion. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
+        </div>
+    </footer>
+</body>
+</html>

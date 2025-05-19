@@ -1,0 +1,42 @@
+from django import forms
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    email = forms.EmailField()
+    message = forms.CharField(widget=forms.Textarea)
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Us - IT-in-Motion</title>
+        <link rel="stylesheet" href="/static/main/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <h1>IT-in-Motion</h1>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/#services">Services</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    
+        <section class="contact-section" id="contact">
+            <h2>Get in Touch</h2>
+            <p>If you have questions or want to book a service, fill out the form below.</p>
+    
+            <form action="#" method="post" class="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </section>
+    </body>
+    </html>
+    
